@@ -17,7 +17,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import com.itwheel.data.UserData;
 import com.itwheel.entity.User;
-import com.itwheel.repository.TaskDao;
 import com.itwheel.repository.UserDao;
 import com.itwheel.service.ServiceException;
 import com.itwheel.service.account.ShiroDbRealm.ShiroUser;
@@ -37,8 +36,6 @@ public class AccountServiceTest {
 	@Mock
 	private UserDao mockUserDao;
 
-	@Mock
-	private TaskDao mockTaskDao;
 
 	@Before
 	public void setUp() {

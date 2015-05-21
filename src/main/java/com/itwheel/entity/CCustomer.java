@@ -11,8 +11,8 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="C_CUSTOMER")
-@NamedQuery(name="CCustomer.findAll", query="SELECT c FROM CCustomer c")
+@Table(name="C_CUSTOMER", schema="NEANDS3")
+@NamedQuery(name="CCustomer.findAll", query="SELECT c.code,c.description FROM CCustomer c order by c.code asc")
 public class CCustomer implements Serializable {
 	private static final long serialVersionUID = 1L;
 

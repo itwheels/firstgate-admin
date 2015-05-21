@@ -19,14 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.itwheel.entity.Task;
 import com.itwheel.entity.User;
 import com.itwheel.service.account.AccountService;
 
 /**
  * 管理员管理用户的Controller.
  * 
- * @author calvin
+ * @author laolu
  */
 @Controller
 @RequestMapping(value = "/admin/user")

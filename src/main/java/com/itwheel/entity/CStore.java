@@ -1,7 +1,9 @@
 package com.itwheel.entity;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="C_STORE")
+@Table(name="C_STORE", schema="NEANDS3")
 @NamedQuery(name="CStore.findAll", query="SELECT c FROM CStore c")
 public class CStore implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -96,8 +98,9 @@ public class CStore implements Serializable {
 	@Column(name="C_CONSUMEAREA_ID")
 	private BigDecimal cConsumeareaId;
 
-	@Column(name="C_CUSTOMER_ID")
-	private BigDecimal cCustomerId;
+	@ManyToOne
+	@JoinColumn(name = "C_CUSTOMER_ID")
+	private CCustomer customer;
 
 	@Column(name="C_CUSTOMERUP_ID")
 	private BigDecimal cCustomerupId;
@@ -582,7 +585,6 @@ public class CStore implements Serializable {
 
 	private String srccode;
 
-	@Column(name="\"STATE\"")
 	private String state;
 
 	private BigDecimal state1;
@@ -871,14 +873,14 @@ public class CStore implements Serializable {
 		this.cConsumeareaId = cConsumeareaId;
 	}
 
-	public BigDecimal getCCustomerId() {
-		return this.cCustomerId;
+	public CCustomer getCustomer() {
+		return customer;
 	}
 
-	public void setCCustomerId(BigDecimal cCustomerId) {
-		this.cCustomerId = cCustomerId;
+	public void setCustomer(CCustomer customer) {
+		this.customer = customer;
 	}
-
+	
 	public BigDecimal getCCustomerupId() {
 		return this.cCustomerupId;
 	}
