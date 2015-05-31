@@ -7,6 +7,7 @@
 <html>
 <head>
 	<title>EDI接口供应商-店仓过滤规则管理</title>
+	<script src="${ctx}/static/js/adminedioutlimit.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -51,6 +52,11 @@
 			//为inputForm注册validate函数
 			$("#inputForm").validate();
 		});
+	</script>
+	<script type="text/mustache" id="recordTmpl">
+		{{#storeList}}
+			<option value="{{code}}">{{name}}</option>
+		{{/storeList}}
 	</script>
 </body>
 </html>

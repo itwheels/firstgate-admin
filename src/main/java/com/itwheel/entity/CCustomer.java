@@ -194,8 +194,7 @@ public class CCustomer implements Serializable {
 	@Column(name="IS_COSTBRAND")
 	private String isCostbrand;
 
-	@Column(name="IS_INTERFACE")
-	private String isInterface;
+	//private String isInterface;
 
 	@Column(name="IS_LEQEE_READ")
 	private String isLeqeeRead;
@@ -206,8 +205,8 @@ public class CCustomer implements Serializable {
 	@Column(name="IS_PCK")
 	private String isPck;
 
-	@Column(name="IS_READ")
-	private BigDecimal isRead;
+
+	//private BigDecimal isRead;
 
 	@Column(name="IS_RETPUT_PCK")
 	private String isRetputPck;
@@ -870,14 +869,14 @@ public class CCustomer implements Serializable {
 		this.isCostbrand = isCostbrand;
 	}
 
-	public String getIsInterface() {
+/*	public String getIsInterface() {
 		return this.isInterface;
 	}
 
 	public void setIsInterface(String isInterface) {
 		this.isInterface = isInterface;
 	}
-
+*/
 	public String getIsLeqeeRead() {
 		return this.isLeqeeRead;
 	}
@@ -902,13 +901,13 @@ public class CCustomer implements Serializable {
 		this.isPck = isPck;
 	}
 
-	public BigDecimal getIsRead() {
+/*	public BigDecimal getIsRead() {
 		return this.isRead;
 	}
 
 	public void setIsRead(BigDecimal isRead) {
 		this.isRead = isRead;
-	}
+	}*/
 
 	public String getIsRetputPck() {
 		return this.isRetputPck;

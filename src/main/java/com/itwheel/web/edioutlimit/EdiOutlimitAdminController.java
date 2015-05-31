@@ -52,7 +52,7 @@ public class EdiOutlimitAdminController {
 	}
 
 	@RequestMapping(value = "create", method = RequestMethod.POST)
-	public String create(@Valid @ModelAttribute("ediOutlimit") EdiOutlimit ediOutlimit, RedirectAttributes redirectAttributes) {
+	public String create(EdiOutlimit ediOutlimit, RedirectAttributes redirectAttributes) {
 		ediOutlimitService.updateEdiOutlimit(ediOutlimit);
 		redirectAttributes.addFlashAttribute("message", "创建接口供应商-店仓过滤成功");
 		return "redirect:/admin/edioutlimit";
@@ -90,9 +90,17 @@ public class EdiOutlimitAdminController {
 	 * 因为仅update()方法的form中有id属性，因此仅在update时实际执行.
 	 */
 	@ModelAttribute
-	public void getEdiOutlimit(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model) {
-		if (id != -1) {
+	public void getEdiOutlimit(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model,@RequestParam(value = "type", defaultValue = "-1") String type,
+			@RequestParam(value = "customerCode", defaultValue = "-1") String customerCode, @RequestParam(value = "storeCode", defaultValue = "-1") String storeCode) {
+		if (id > 0) {
 			model.addAttribute("ediOutlimit", ediOutlimitService.getEdiOutlimit(id));
+		}
+		else {
+			EdiOutlimit ediOutlimit = new EdiOutlimit();
+			ediOutlimit.setCustomerCode(customerCode);
+			ediOutlimit.setStoreCode(storeCode);
+			ediOutlimit.setType(type);
+			model.addAttribute("ediOutlimit", ediOutlimit);
 		}
 	}
 }

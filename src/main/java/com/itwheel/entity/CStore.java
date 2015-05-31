@@ -403,8 +403,7 @@ public class CStore implements Serializable {
 	@Column(name="IS_MORESALESREP")
 	private String isMoresalesrep;
 
-	@Column(name="IS_READ")
-	private BigDecimal isRead;
+	//private BigDecimal isRead;
 
 	@Column(name="IS_RET")
 	private String isRet;
@@ -500,7 +499,7 @@ public class CStore implements Serializable {
 
 	private String market;
 
-	private BigDecimal marketdate;
+	//private BigDecimal marketdate;
 
 	@Column(name="MAX_STORAGE")
 	private BigDecimal maxStorage;
@@ -1769,14 +1768,14 @@ public class CStore implements Serializable {
 		this.isMoresalesrep = isMoresalesrep;
 	}
 
-	public BigDecimal getIsRead() {
+/*	public BigDecimal getIsRead() {
 		return this.isRead;
 	}
 
 	public void setIsRead(BigDecimal isRead) {
 		this.isRead = isRead;
 	}
-
+*/
 	public String getIsRet() {
 		return this.isRet;
 	}
@@ -2097,14 +2096,14 @@ public class CStore implements Serializable {
 		this.market = market;
 	}
 
-	public BigDecimal getMarketdate() {
+/*	public BigDecimal getMarketdate() {
 		return this.marketdate;
 	}
 
 	public void setMarketdate(BigDecimal marketdate) {
 		this.marketdate = marketdate;
 	}
-
+*/
 	public BigDecimal getMaxStorage() {
 		return this.maxStorage;
 	}
