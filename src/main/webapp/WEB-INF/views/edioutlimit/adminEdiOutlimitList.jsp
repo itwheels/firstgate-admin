@@ -12,13 +12,14 @@
 	<c:if test="${not empty message}">
 		<div id="message" class="alert alert-success"><button data-dismiss="alert" class="close">×</button>${message}</div>
 	</c:if>
-	
+	<legend><small>EDI接口供应商-店仓过滤规则管理</small></legend>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
 		<thead><tr><th>接口类型</th><th>供应商编码</th><th>店仓编码</th><th>管理</th></tr></thead>
 		<tbody>
 		<c:forEach items="${ediOutlimits}" var="ediOutlimit">
 			<tr>
 				<td>${ediOutlimit.type}</td>
+				<td>${ediOutlimit.customerCode}</td>
 				<td>${ediOutlimit.customerCode}</td>
 				<td>${ediOutlimit.storeCode}</td>
 				<td><a href="${ctx}/admin/edioutlimit/update/${ediOutlimit.id}">修改</a></td>
